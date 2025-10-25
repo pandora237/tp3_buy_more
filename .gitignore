@@ -15,8 +15,9 @@
 /license.txt
 /readme.html
 /wp-*.php
-/xmlrpc.php
-/wp-content\plugins\woocommerce
+/xmlrpc.php 
+wp-content\plugins\woocommercere
+/wp-content\plugins\woocommercere
 
 # Configuration
 wp-config.php
