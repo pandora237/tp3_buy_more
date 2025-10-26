@@ -1,0 +1,155 @@
+.main {
+    text-align: center;
+    position: relative;
+}
+
+.main .content-product {
+
+    display: grid;
+    width: 100%;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(18%, 250px));
+}
+
+
+.section-content {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.section-content .filtre {}
+
+.section-content .items-filter {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-content .content-filtre {
+    position: sticky;
+    top: 5px;
+    background-color: var(--col-white);
+    padding: 5px;
+    border: 2px solid var(--col-border);
+    max-width: 200px;
+}
+
+.content-filtre h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.items-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #444;
+}
+
+.filter-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.filter-group .slider-container label {
+    display: grid;
+    grid-template-columns: 50px auto;
+    gap: 5px;
+}
+
+.filter-group input[type="number"],
+.filter-group select {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter-group input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+
+/*.main .description{
+    margin-bottom:50px;
+}*/
+
+
+
+.main .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0px;
+    box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.1);
+    background-color: var(--col-white);
+    margin-bottom: 100px;
+}
+
+.main .contenuFiltre {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px
+}
+
+input[class="visibleCheckbox"] {
+    display: none;
+}
+
+
+.main .menu-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+ 
+.main h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+.main .filtre1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.main .filtre1 p {
+    margin-bottom: 8px;
+}
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    display: none;
+}
+
+.chevron {
+    display: inline-block;
+}
+
+input[type="checkbox"]:checked+.menu-label .chevron {
+    transform: rotate(90deg);
+}
+
+input[type="checkbox"]:checked~.submenu {
+    display: flex;
+}
+
+.content-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+}

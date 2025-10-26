@@ -1,0 +1,145 @@
+.banner {
+    background: linear-gradient(to right, var(--col-secondary), var(--col-primary));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 30px;
+    padding: 40px 20px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.banner-content {
+    flex: 1;
+}
+
+.banner-content h1 {
+    font-size: 2.2rem;
+}
+
+.banner-content p {
+    margin: 15px 0;
+}
+
+.rate-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: gold;
+}
+
+.banner-image img {
+    max-width: 300px;
+    border-radius: 12px;
+}
+
+
+/* best */
+.best-seller {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link-see-more {
+    align-self: flex-end;
+    width: max-content !important;
+    display: block;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+/*  */
+.best-product   {
+     display: flex;
+     flex-direction: column;
+}
+
+/*  */
+.pub-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.pub-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pub-text {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--col-white);
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pub-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* ===== Section Catégories ===== */
+.best-categories{
+    display: flex;
+    flex-direction: column;
+}
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    background: var(--col-white);
+    border: 1px solid var(--col-gray);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+.category-card h4 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--col-white);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/*  */
+@media (max-width: 768px) {
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+ 
+}
