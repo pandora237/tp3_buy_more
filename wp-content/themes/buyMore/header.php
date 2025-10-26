@@ -94,14 +94,14 @@
                         </svg>
 
                         <ul class="profile-menu">
-                            <li><a href="/pages/inscription.html">Inscription</a></li>
-                            <li><a href="/pages/connexion.html">Connexion</a></li>
-                            <li><a href="/pages/admin/mon-compte.html">Mon compte</a></li>
+                            <li><a href="<?php echo home_url() ;?>/inscription">Inscription</a></li>
+                            <li><a href="<?php echo home_url() ;?>/connexion">Connexion</a></li>
+                            <li><a href="<?php echo home_url() ;?>/admin/mon-compte">Mon compte</a></li>
                             <li><a href="#">Déconnexion</a></li>
                         </ul>
                     </div>
 
-                    <a href="/pages/panier.html">
+                    <a href="<?php echo home_url() ;?>/panier">
                         <div class="cart">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#333"
                                 viewBox="0 0 24 24">

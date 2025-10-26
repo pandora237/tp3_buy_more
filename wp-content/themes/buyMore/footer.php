@@ -21,17 +21,17 @@
             <div class="footer-item">
                 <h2>Qui sommes-nous ?</h2>
                 <ul>
-                    <li><a href="/pages/apropos.html">À propos</a></li>
-                    <li><a href="/pages/equipe.html">Notre équipe</a></li>
+                    <li><a href="<?php echo home_url() ;?>/apropos">À propos</a></li>
+                    <li><a href="<?php echo home_url() ;?>/equipe">Notre équipe</a></li>
                 </ul>
             </div>
 
             <div class="footer-item">
                 <h2>Liens utiles</h2>
                 <ul>
-                    <li><a href="/pages/faq.html">FAQ</a></li>
-                    <li><a href="/pages/politique_de_confidentialite.html">Politique de confidentialité</a></li>
-                    <li><a href="/pages/livraison_et_retour.html">livraison et retour</a></li>
+                    <li><a href="<?php echo home_url() ;?>/faq">FAQ</a></li>
+                    <li><a href="<?php echo home_url() ;?>/politique_de_confidentialite">Politique de confidentialité</a></li>
+                    <li><a href="<?php echo home_url() ;?>/livraison_et_retour">livraison et retour</a></li>
                 </ul>
             </div>
 
