@@ -17,6 +17,7 @@
 /wp-*.php
 /xmlrpc.php 
 /wp-content/plugins/woocommercere/
+/wp-content/plugins/akismet
 
 # Configuration
 wp-config.php
