@@ -6,14 +6,15 @@
 
 get_header(); ?>
 
-<!-- Ajouter FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/produit.css">
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/index.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/produit.css?v=<?php echo time(); ?>">
+<!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/product-detail?v=<?php echo time(); ?>"> -->
+
 
 <main>
     <div class="container">
         <div class="product-page">
-            <!-- Breadcrumb -->
             <nav class="breadcrumb">
                 <a href="#">Accueil</a>
                 <span>/</span>
@@ -24,22 +25,19 @@ get_header(); ?>
                 <span>iPhone 14 Pro Max</span>
             </nav>
 
-            <!-- Product Details Section -->
-            <div class="product-details">
-                <!-- Left: Image Gallery -->
-                <div class="product-images">
+            <div class="product-detail">
+                <div class="product-gallery">
                     <div class="main-image">
-                        <img id="mainImage" src="https://via.placeholder.com/500" alt="iPhone 14 Pro Max">
+                        <img id="mainImage" src="https://picsum.photos/500" alt="iPhone 14 Pro Max">
                     </div>
                     <div class="thumbnail-container">
-                        <img class="thumbnail active" src="https://via.placeholder.com/100" alt="Thumbnail 1" onclick="changeImage(this)">
-                        <img class="thumbnail" src="https://via.placeholder.com/100" alt="Thumbnail 2" onclick="changeImage(this)">
-                        <img class="thumbnail" src="https://via.placeholder.com/100" alt="Thumbnail 3" onclick="changeImage(this)">
-                        <img class="thumbnail" src="https://via.placeholder.com/100" alt="Thumbnail 4" onclick="changeImage(this)">
+                        <img class="thumbnail active" src="https://picsum.photos/100" alt="Thumbnail 1" onclick="changeImage(this)">
+                        <img class="thumbnail" src="https://picsum.photos/100" alt="Thumbnail 2" onclick="changeImage(this)">
+                        <img class="thumbnail" src="https://picsum.photos/100" alt="Thumbnail 3" onclick="changeImage(this)">
+                        <img class="thumbnail" src="https://picsum.photos/100" alt="Thumbnail 4" onclick="changeImage(this)">
                     </div>
                 </div>
 
-                <!-- Right: Product Info -->
                 <div class="product-info">
                     <h1>iPhone 14 Pro Max</h1>
                     <p class="brand">Marque: <strong>Apple</strong></p>
@@ -56,7 +54,6 @@ get_header(); ?>
                     <p class="price">1 299 000 FCFA</p>
                     <p class="availability">Disponible en stock</p>
 
-                    <!-- Product Options -->
                     <div class="product-options">
                         <label for="color">Couleur:</label>
                         <select id="color">
@@ -76,7 +73,6 @@ get_header(); ?>
                         <input type="number" id="quantity" value="1" min="1">
                     </div>
 
-                    <!-- Action Buttons -->
                     <div class="action-buttons">
                         <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Ajouter au panier</button>
                         <button class="btn-buy-now"><i class="fas fa-bolt"></i> Acheter maintenant</button>
@@ -85,14 +81,12 @@ get_header(); ?>
                 </div>
             </div>
 
-            <!-- Tabs Section -->
             <div class="tabs">
                 <button class="tab-button active" onclick="openTab(event, 'description')">Description</button>
                 <button class="tab-button" onclick="openTab(event, 'specifications')">Spécifications</button>
                 <button class="tab-button" onclick="openTab(event, 'reviews')">Avis</button>
             </div>
 
-            <!-- Tab Content -->
             <div id="description" class="tab-content active">
                 <h2>Description du produit</h2>
                 <p>
@@ -148,7 +142,6 @@ get_header(); ?>
         </div>
     </div>
 </main>
-
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/produit.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/tabs.js"></script>
 
 <?php get_footer(); ?>
