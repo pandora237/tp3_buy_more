@@ -20,5 +20,9 @@ function buymore_enqueue_assets()
     if (is_page('politique_de_confidentialité')) {
         wp_enqueue_style('politique_de_confidentialité-style', get_stylesheet_directory_uri() . '/assets/css/politique_de_confidentialité.css');
     }
+    // CSS/JS page paiement
+    if (is_page('paiement')) {
+        wp_enqueue_style('paiement-style', get_stylesheet_directory_uri() . '/assets/css/paiement.css');
+    }
 }
 add_action('wp_enqueue_scripts', 'buymore_enqueue_assets');
