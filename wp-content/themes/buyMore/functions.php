@@ -16,5 +16,10 @@ function buymore_enqueue_assets()
     if (is_page('apropos')) {
         wp_enqueue_style('apropos-style', get_stylesheet_directory_uri() . '/assets/css/apropos.css');
     }
+
+    // CSS/JS page À propos
+    if (is_page('livraison')) {
+        wp_enqueue_style('livraison-style', get_stylesheet_directory_uri() . '/assets/css/livraison.css');
+    }
 }
 add_action('wp_enqueue_scripts', 'buymore_enqueue_assets');

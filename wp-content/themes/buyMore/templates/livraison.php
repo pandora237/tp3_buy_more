@@ -1,0 +1,191 @@
+<?php
+/*
+Template Name: livraison
+*/
+get_header();
+?>
+
+<!-- Formulaire de livraison -->
+    <section class="content">
+      <div class="form-container">
+        <div class="progressbar">
+          <div class="progress-step ">1</div>
+          <div class="progress-step active">2</div>
+          <div class="progress-step">3</div>
+        </div>
+        <div class="progress-labels">
+          <span>Panier</span>
+          <span>Livraison</span>
+          <span>Paiement</span>
+        </div>
+
+        <h2>Informations de Livraison</h2>
+
+
+        <!-- validation du formulaire de livraison -->
+
+
+        <form class="form-livraison" id="form-step-1">
+          <div>
+            <label for="name">Nom complet</label>
+            <input class="go-to-validate" type="text" id="name" name="name" placeholder="Entrez votre nom" required/>
+            <div class="description-form"></div>
+          </div>
+
+          <div>
+            <label for="phone">Téléphone</label>
+            <input class="go-to-validate" data-type="phone" type="tel" id="phone" name="phone"
+              placeholder="Ex: +237 699 00 00 00" required>
+            <div class="description-form"></div>
+          </div>
+
+          <div>
+            <label for="address">Adresse</label>
+            <input class="go-to-validate" type="text" id="address" name="address"
+              placeholder="Votre adresse de livraison" required/>
+            <div class="description-form"></div>
+          </div>
+
+          <div>
+            <label for="country">Pays</label>
+            <input class="go-to-validate" type="text" id="country" name="country" placeholder="Ex: Cameroun" required>
+            <div class="description-form"></div>
+          </div>
+
+          <div>
+            <label for="city">Ville</label>
+            <input class="go-to-validate" type="text" id="city" name="city" placeholder="Ex: Douala" required>
+            <div class="description-form"></div>
+          </div>
+
+          <div>
+            <label for="street">Quartier </label>
+            <input class="go-to-validate" type="text" id="street" name="street" placeholder="Ex: Bonapriso" required>
+            <div class="description-form"></div>
+          </div>
+
+          <!-- <div>
+          <label for="delivery">Méthode de livraison</label>
+          <select id="delivery" required>
+            <option value="">Choisir une option</option>
+            <option value="standard">Standard (3-5 jours)</option>
+            <option value="express">Express (1-2 jours)</option>
+          </select>
+        </div> -->
+
+          <!-- <div class="buttons">
+          <button type="button" class="back" onclick="window.location.href='panier.html'">← Retour au Panier</button>
+          <button type="submit" class="next" onclick="window.location.href='paiement.html'">Vers Paiement →</button> -->
+
+          <div class="buttons">
+            <button type="button" class="back">←Retour au Panier</button>
+            <button type="submit" class="next">Vers Paiement →</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Section Résumé -->
+
+    <div class="summary-block">
+      <div class="summary-main">
+        <h2>Résumé de la commande</h2>
+        <div class="summary-box" id="summary-box"> 
+          <div class="paiement-pub">
+           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/orange-money.png" alt=""> 
+           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/mobile-money.jpg" alt="">  
+          </div>
+          <div class="final-total">
+              <span class="total-label">Total</span>
+              <span class="total-amount">129000 FCFA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <div class="summary-section">
+      <h2>Résumé de la commande</h2>
+      <div class="summary-box">
+        <div class="summary-item">
+          <div class="img-wrapper">
+            <img src="../assets/images/iphone15pro.jpeg" alt="iPhone" class="summary-img">
+            <span class="quantity-badge">2</span>
+          </div>
+          <div class="summary-details">
+            <h4>iPhone 14 128GB - Midnight - Unlocked</h4>
+            <p class="summary-shipping">Shipping</p>
+          </div>
+          <div class="summary-price">
+            <div>$328.00</div>
+            <div style="margin-top: 3px;">Free</div>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <div class="img-wrapper">
+            <img src="../assets/images/iphone15pro.jpeg" alt="Case" class="summary-img">
+            <span class="quantity-badge">1</span>
+          </div>
+          <div class="summary-details">
+            <h4>iPhone 14 case - Recycled plastic - Transparent</h4>
+            <p class="summary-shipping">Shipping</p>
+          </div>
+          <div class="summary-price">
+            <div>$19.99</div>
+            <div style="margin-top: 3px;">Free</div>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <div class="img-wrapper">
+            <img src="../assets/images/iphone15pro.jpeg" alt="iPhone 13" class="summary-img">
+            <span class="quantity-badge">2</span>
+          </div>
+          <div class="summary-details">
+            <h4>iPhone 13 128GB - Midnight - Unlocked</h4>
+            <p class="summary-shipping">Shipping</p>
+          </div>
+          <div class="summary-price">
+            <div>$283.99</div>
+            <div style="margin-top: 3px;">Free</div>
+          </div>
+        </div>
+
+        <div class="summary-item">
+          <div class="img-wrapper">
+            <img src="../assets/images/iphone15pro.jpeg" alt="Screen" class="summary-img">
+            <span class="quantity-badge">1</span>
+          </div>
+          <div class="summary-details">
+            <h4>iPhone 13 case and 2 protective screens - Silicone - Black</h4>
+            <p class="summary-shipping">Shipping</p>
+          </div>
+          <div class="summary-price">
+            <div>$20.99</div>
+            <div style="margin-top: 3px;">Free</div>
+          </div>
+        </div>
+
+        <div class="summary-totals">
+          <div class="total-row">
+            <span>Sous-total</span>
+            <span>$1,284.95</span>
+          </div>
+          <div class="total-row">
+            <span><a href="#">Frais d’assurance qualité</a></span>
+            <span>$8.99</span>
+          </div>
+
+          <div class="final-total">
+            <span class="total-label">Total</span>
+            <span class="total-amount">$1,293.94</span>
+          </div>
+
+
+          <p class="terms-text">En confirmant cette commande, vous acceptez nos <a href="#">Conditions Générales</a> et
+            notre <a href="#">Politique de Confidentialité</a></p>
+        </div>
+      </div>
+    </div> -->
+  
+
+<?php get_footer(); ?>
