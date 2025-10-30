@@ -11,6 +11,11 @@ function buymore_enqueue_assets()
     if (is_front_page()) {
         wp_enqueue_style('home-style', get_stylesheet_directory_uri() . '/assets/css/home.css');
     }
+    //CSS/JS page panier
+    if(is_page('panier')){
+        wp_enqueue_style('panier-style',get_stylesheet_directory_uri() .'/assets/css/panier.css');
+        wp_enqueue_script('panier', get_stylesheet_directory_uri() . '/assets/js/panier.js', [], '1.0', true);
+    }
 
     // --- Page À propos ---
     if (is_page('apropos')) {
