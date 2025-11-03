@@ -94,14 +94,14 @@
                         </svg>
 
                         <ul class="profile-menu">
-                            <li><a href="<?php echo home_url() ;?>/inscription">Inscription</a></li>
-                            <li><a href="<?php echo home_url() ;?>/connexion">Connexion</a></li>
-                            <li><a href="<?php echo home_url() ;?>/admin/mon-compte">Mon compte</a></li>
+                            <li><a href="<?php echo home_url(); ?>/inscription">Inscription</a></li>
+                            <li><a href="<?php echo home_url(); ?>/connexion">Connexion</a></li>
+                            <li><a href="<?php echo home_url(); ?>/admin/mon-compte">Mon compte</a></li>
                             <li><a href="#">Déconnexion</a></li>
                         </ul>
                     </div>
 
-                    <a href="<?php echo home_url() ;?>/panier">
+                    <a href="<?php echo home_url(); ?>/panier">
                         <div class="cart">
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#333"
                                 viewBox="0 0 24 24">
@@ -116,37 +116,53 @@
                     </a>
                 </div>
             </nav>
-            <div id="menu" class=" ">
-                <div class="menu-items">
-                    <ul class="">
-                        <li class="menu-item">
-                            <a href="#">
-                                <span><i class="fa-solid fa-tv"></i></span>
-                                <span>Électronique</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">
-                                <span><i class="fa-solid fa-utensils"></i></span>
-                                <span>Alimentation</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">
-                                <span><i class="fa-solid fa-shirt"></i></span>
-                                <span>Mode</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">
-                                <span><i class="fa-solid fa-couch"></i></span>
-                                <span>Maison</span>
-                            </a>
-                        </li>
-                    </ul>
+            <?php
 
+            $icons = [
+                'Électronique' => 'fa-tv',
+                'Electronique' => 'fa-tv',
+                'Alimentation' => 'fa-utensils',
+                'Mode' => 'fa-shirt',
+                'Maison' => 'fa-couch',
+                'Sports' => 'fa-football-ball',
+                'Informatique' => 'fa-laptop',
+                'Téléphones' => 'fa-mobile-screen',
+            ];
+
+            $categories = get_terms([
+                'taxonomy'   => 'product_cat',
+                'hide_empty' => false,
+                'number'     => 4,
+                'orderby'    => 'name',
+                'order'      => 'ASC',
+            ]);
+            if (!empty($categories) && !is_wp_error($categories)) : ?>
+                <div id="menu">
+                    <div class="menu-items">
+                        <ul class="">
+                            <?php foreach ($categories as $category) :
+                                $icon_class = isset($icons[$category->name]) ? $icons[$category->name] : 'fa-tag';
+                                $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
+                                $image = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : '';
+                            ?>
+                                <li class="menu-item">
+                                    <a href="<?php echo esc_url(get_term_link($category)); ?>">
+                                        <span><i class="fa-solid <?php echo esc_attr($icon_class); ?>"></i></span>
+                                        <span><?php echo esc_html($category->name) . ' ( ' . $category->count . ' ) '; ?></span>
+                                    </a>
+                                    <?php if ($image): ?>
+                                        <div class="img-menu">
+                                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($category->name); ?>">
+                                        </div>
+                                    <?php endif; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
+
+
         </div>
     </header>
     <main class="container">

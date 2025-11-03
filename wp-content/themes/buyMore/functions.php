@@ -21,6 +21,11 @@ function buymore_enqueue_assets()
     if (is_page('apropos')) {
         wp_enqueue_style('apropos-style', get_stylesheet_directory_uri() . '/assets/css/apropos.css');
     }
+
+    // CSS/JS page À propos
+    if (is_page('livraison')) {
+        wp_enqueue_style('livraison-style', get_stylesheet_directory_uri() . '/assets/css/livraison.css');
+    }
     // CSS/JS page À politique de confidentialité
     if (is_page('politique_de_confidentialité')) {
         wp_enqueue_style('politique_de_confidentialité-style', get_stylesheet_directory_uri() . '/assets/css/politique_de_confidentialité.css');

@@ -7,7 +7,7 @@ Version: 1.0
 */
 
 
-@import url("assets/libs/fontawesome-free-6.7.2-web/css/all.css"); 
+@import url("assets/libs/fontawesome-free-6.7.2-web/css/all.css");
 
 
 :root {
@@ -218,15 +218,16 @@ header {
 }
 
 /*  correctif wordpress */
- body.admin-bar .header-menu {
-  top: 32px;
+body.admin-bar .header-menu {
+    top: 32px;
 }
 
 @media screen and (max-width: 782px) {
-  body.admin-bar .header-menu {
-    top: 46px;
-  }
+    body.admin-bar .header-menu {
+        top: 46px;
+    }
 }
+
 /*  */
 
 .main-nav {
@@ -285,6 +286,10 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.logo img {
+    height: 50px !important;
 }
 
 .logo a {
