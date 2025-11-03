@@ -12,8 +12,8 @@ function buymore_enqueue_assets()
         wp_enqueue_style('home-style', get_stylesheet_directory_uri() . '/assets/css/home.css');
     }
     //CSS/JS page panier
-    if(is_page('panier')){
-        wp_enqueue_style('panier-style',get_stylesheet_directory_uri() .'/assets/css/panier.css');
+    if (is_page('panier')) {
+        wp_enqueue_style('panier-style', get_stylesheet_directory_uri() . '/assets/css/panier.css');
         wp_enqueue_script('panier', get_stylesheet_directory_uri() . '/assets/js/panier.js', [], '1.0', true);
     }
 
@@ -45,9 +45,10 @@ function buymore_enqueue_assets()
     if (is_page('inscription')) {
         wp_enqueue_style('inscription-style', get_stylesheet_directory_uri() . '/assets/css/connexion.css');
         wp_enqueue_style('index-style', get_stylesheet_directory_uri() . '/assets/css/index.css');
-    // CSS/JS page listeproduits
-    if (is_page('listeproduits')) {
-        wp_enqueue_style('listeproduits-style', get_stylesheet_directory_uri() . '/assets/css/listeProduits.css');
+        // CSS/JS page listeproduits
+        if (is_page('listeproduits')) {
+            wp_enqueue_style('listeproduits-style', get_stylesheet_directory_uri() . '/assets/css/listeProduits.css');
+        }
     }
 }
 
