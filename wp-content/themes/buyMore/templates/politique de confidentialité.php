@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: politique_de_confidentialité
+Template Name: politique_de_confidentialite
 */
 get_header();
 ?>

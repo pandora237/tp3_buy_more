@@ -27,8 +27,8 @@ function buymore_enqueue_assets()
         wp_enqueue_style('livraison-style', get_stylesheet_directory_uri() . '/assets/css/livraison.css');
     }
     // CSS/JS page À politique de confidentialité
-    if (is_page('politique_de_confidentialité')) {
-        wp_enqueue_style('politique_de_confidentialité-style', get_stylesheet_directory_uri() . '/assets/css/politique_de_confidentialité.css');
+    if (is_page('politique_de_confidentialite')) {
+        wp_enqueue_style('politique_de_confidentialite-style', get_stylesheet_directory_uri() . '/assets/css/politique_de_confidentialite.css');
     }
     // CSS/JS page paiement
     if (is_page('paiement')) {
@@ -45,10 +45,31 @@ function buymore_enqueue_assets()
     if (is_page('inscription')) {
         wp_enqueue_style('inscription-style', get_stylesheet_directory_uri() . '/assets/css/connexion.css');
         wp_enqueue_style('index-style', get_stylesheet_directory_uri() . '/assets/css/index.css');
-        // CSS/JS page listeproduits
-        if (is_page('listeproduits')) {
-            wp_enqueue_style('listeproduits-style', get_stylesheet_directory_uri() . '/assets/css/listeProduits.css');
-        }
+    }
+    // CSS/JS page listeproduits
+    if (is_page('listeproduits')) {
+        wp_enqueue_style('listeproduits-style', get_stylesheet_directory_uri() . '/assets/css/listeProduits.css');
+    }
+
+    // CSS/JS page fiche-produit
+    if (is_page('fiche-produit')) {
+        wp_enqueue_style('fiche-produit-style', get_stylesheet_directory_uri() . '/assets/css/produit.css');
+        wp_enqueue_script('buymore-produit', get_stylesheet_directory_uri() . '/assets/js/produit.js', [], '1.0', true);
+    }
+
+    // CSS/JS page 404
+    if (is_page('404')) {
+        wp_enqueue_style('404-style', get_stylesheet_directory_uri() . '/assets/css/404.css');
+    }
+
+    // CSS/JS page FAQ
+    if (is_page('FAQ')) {
+        wp_enqueue_style('FAQ-style', get_stylesheet_directory_uri() . '/assets/css/FAQ.css');
+    }
+
+    // CSS/JS page equipe
+    if (is_page('equipe')) {
+        wp_enqueue_style('equipe-style', get_stylesheet_directory_uri() . '/assets/css/equipe.css');
     }
 }
 

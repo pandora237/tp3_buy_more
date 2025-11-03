@@ -1,0 +1,49 @@
+<?php
+/*
+Template Name: FAQ
+*/
+get_header();
+?>
+
+<section>
+    <h3>FAQ</h3>
+
+    <details>
+        <summary>Comment créer un compte client ?</summary>
+        <p>Il suffit de cliquer sur "Inscription" et remplir vos informations personnelles.</p>
+    </details>
+
+    <details>
+        <summary>J'ai oublié mon mot de passe, que faire ?</summary>
+        <p>Cliquez sur "Mot de passe oublié", puis suivez les instructions pour réinitialiser votre mot de
+            passe.
+        </p>
+    </details>
+
+    <details>
+        <summary>Quels moyens de paiement acceptez-vous ?</summary>
+        <p>Nous acceptons Mobile Money, Orange Money et Paypal.</p>
+    </details>
+
+    <details>
+        <summary>Comment suivre ma commande ?</summary>
+        <p>Connectez-vous, allez dans "Mon compte" puis "Mes commandes" pour voir l'état de vos achats.</p>
+    </details>
+
+    <details>
+        <summary>Comment trouver les promotions ou soldes ?</summary>
+        <p>Allez dans la section "Promotions/Soldes" du site pour voir les offres en cours.</p>
+    </details>
+
+    <details>
+        <summary>Comment filtrer les produits dans le catalogue ?</summary>
+        <p>Utilisez les filtres disponibles dans le catalogue pour trier par prix, nouveauté ou catégorie.</p>
+    </details>
+
+
+    <details>
+        <summary>Comment contacter le service client ?</summary>
+        <p>Allez dans la page "Contact" et remplissez le formulaire pour nous envoyer un message.</p>
+    </details>
+</section>
+<?php get_footer(); ?>
