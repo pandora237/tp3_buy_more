@@ -71,6 +71,21 @@ function buymore_enqueue_assets()
     if (is_page('equipe')) {
         wp_enqueue_style('equipe-style', get_stylesheet_directory_uri() . '/assets/css/equipe.css');
     }
+
+
+    // CSS/JS page mon-compte
+    if (is_page('mon-compte')) {
+        wp_enqueue_style('mon-compte-style', get_stylesheet_directory_uri() . '/assets/css/mon-compte.css');
+    }
+    // CSS/JS page commandes
+    if (is_page('commandes')) {
+        wp_enqueue_style('commandes-style', get_stylesheet_directory_uri() . '/assets/css/commandes.css');
+    }
+
+    // CSS/JS page livraison_et_retour
+    if (is_page('livraison_et_retour')) {
+        wp_enqueue_style('livraison_et_retour-style', get_stylesheet_directory_uri() . '/assets/css/livraison_et_retour.css');
+    }
 }
 
 
