@@ -1,4 +1,9 @@
 <?php
+function buy_more_add_woocommerce_support()
+{
+    add_theme_support('woocommerce');
+}
+add_action('after_setup_theme', 'buy_more_add_woocommerce_support');
 function buymore_enqueue_assets()
 {
     // --- CSS principal du thème ---
@@ -7,9 +12,14 @@ function buymore_enqueue_assets()
     // --- JS principal du thème ---
     wp_enqueue_script('buymore-main', get_stylesheet_directory_uri() . '/assets/js/index.js', [], '1.0', true);
 
+    // ---libs
+    wp_enqueue_style('swipper-css-style', get_stylesheet_directory_uri() . '/assets/libs/swipper/css/swiper-bundle.min.css');
+    wp_enqueue_script('swipper-js-main', get_stylesheet_directory_uri() . '/assets/libs/swipper/js/swiper-bundle.min.js', [], '1.0', true);
+
     // --- Page d'accueil ---
     if (is_front_page()) {
         wp_enqueue_style('home-style', get_stylesheet_directory_uri() . '/assets/css/home.css');
+        wp_enqueue_script('home-main', get_stylesheet_directory_uri() . '/assets/js/home.js', [], '1.0', true);
     }
     //CSS/JS page panier
     if (is_page('panier')) {
@@ -52,7 +62,7 @@ function buymore_enqueue_assets()
     }
 
     // CSS/JS page fiche-produit
-    if (is_page('fiche-produit')) {
+    if (is_product()) {
         wp_enqueue_style('fiche-produit-style', get_stylesheet_directory_uri() . '/assets/css/produit.css');
         wp_enqueue_script('buymore-produit', get_stylesheet_directory_uri() . '/assets/js/produit.js', [], '1.0', true);
     }
@@ -88,5 +98,13 @@ function buymore_enqueue_assets()
     }
 }
 
-
 add_action('wp_enqueue_scripts', 'buymore_enqueue_assets');
+
+
+function custom_remove_hooks()
+{
+    if (is_product()) {
+        remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+    }
+}
+add_action('template_redirect', 'custom_remove_hooks');

@@ -18,10 +18,7 @@
         $cart_count = WC()->cart->get_cart_contents_count();
     }
 
-
-
     $icons = [
-        'Électronique' => 'fa-tv',
         'Electronique' => 'fa-tv',
         'Alimentation' => 'fa-utensils',
         'Mode' => 'fa-shirt',

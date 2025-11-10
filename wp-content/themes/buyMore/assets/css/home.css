@@ -1,5 +1,5 @@
 .banner {
-    background: linear-gradient(to right, var(--col-secondary), var(--col-primary));
+    background: linear-gradient(30deg, var(--col-primary), var(--col-secondary), var(--col-primary));
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -8,6 +8,12 @@
     padding: 40px 20px;
     border-radius: 12px;
     width: 100%;
+    max-height: 100vh;
+    height: 400px;
+}
+
+.banner.second {
+    background: linear-gradient(30deg, var(--col-secondary), var(--col-white), var(--col-secondary));
 }
 
 .banner-content {
@@ -22,6 +28,21 @@
     margin: 15px 0;
 }
 
+.banner-image {
+    width: 300px;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+
+.slider {
+    display: flex;
+    animation: scroll 16s linear infinite;
+}
+
 .rate-content {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -29,10 +50,33 @@
 }
 
 .banner-image img {
-    max-width: 300px;
+    width: 300px;
+    max-width: 100%;
     border-radius: 12px;
+    height: auto;
+    flex: 0 0 auto;
+    height: 300px !important;
 }
 
+@media (max-width: 420px) {
+    .banner-image {
+        width: 100%;
+    }
+
+    .banner-image img {
+        width: calc(100% - 16px);
+    }
+}
+
+/* @keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-400%);
+    }
+} */
 
 /* best */
 .best-seller {
@@ -54,9 +98,9 @@
 }
 
 /*  */
-.best-product   {
-     display: flex;
-     flex-direction: column;
+.best-product {
+    display: flex;
+    flex-direction: column;
 }
 
 /*  */
@@ -84,6 +128,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    max-width: 60%;
 }
 
 .pub-text h3 {
@@ -92,10 +137,11 @@
 }
 
 /* ===== Section Catégories ===== */
-.best-categories{
+.best-categories {
     display: flex;
     flex-direction: column;
 }
+
 .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -118,7 +164,7 @@
 }
 
 .category-card img {
-    width: 100%;
+    max-width: 100%;
     height: 250px;
     object-fit: contain;
 }
@@ -141,5 +187,10 @@
         flex-direction: column;
         text-align: center;
     }
- 
+
+    .banner {
+        max-height: 100vh;
+        height: 570px;
+    }
+
 }
