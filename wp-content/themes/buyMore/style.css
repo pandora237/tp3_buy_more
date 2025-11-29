@@ -7,8 +7,6 @@ Version: 1.0
 */
 
 
-@import url("../libs/fontawesome-free-6.7.2-web/css/all.css");
-
 :root {
     --font-family: 'Poppins', sans-serif;
 
@@ -1163,7 +1161,7 @@ body.admin-bar .header-menu {
     font-size: 14px;
 }
 
-.rating-and-like{
+.rating-and-like {
     display: flex;
     align-items: center;
     justify-content: center;

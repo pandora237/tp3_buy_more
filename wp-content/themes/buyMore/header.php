@@ -78,11 +78,11 @@
 
                         <ul class="profile-menu">
                             <?php if ($is_logged_in): ?>
-                                <li><a href="<?php echo home_url(); ?>/admin/mon-compte">Mon compte</a></li>
+                                <li><a href="<?php echo home_url(); ?>/my-account">Mon compte</a></li>
                                 <li><a href="<?php echo wp_logout_url(home_url()); ?>">Déconnexion</a></li>
                             <?php else: ?>
-                                <li><a href="<?php echo home_url(); ?>/inscription">Inscription</a></li>
-                                <li><a href="<?php echo home_url(); ?>/connexion">Connexion</a></li>
+                                <li><a href="<?php echo home_url(); ?>/my-account">Inscription/Connexion</a></li>
+                                <!-- <li><a href="<?php echo home_url(); ?>/connexion">Connexion</a></li> -->
                             <?php endif; ?>
                         </ul>
                     </div>

@@ -44,8 +44,8 @@ main form .form-group {
 .form-group input {
     width: 100%;
     padding: 12px 15px;
-    border: 2px solid var(--col-border);
-    border-radius: 8px;
+    border: 2px solid var(--col-border) !important;
+    border-radius: 8px !important;
     font-size: 1rem;
     transition: border-color 0.3s ease;
     box-sizing: border-box;
@@ -123,6 +123,7 @@ main form .form-group {
 .forgot-password:hover {
     text-decoration: underline;
 }
+
 .page-intro {
     text-align: center;
     margin-bottom: 30px;

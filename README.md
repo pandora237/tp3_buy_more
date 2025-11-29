@@ -19,3 +19,7 @@ site de e-commerce realiser par le group d'etudiant de 4Gi-ENSPY :
 
 instructions d'installation :
 * ajouter le shortcode [woocommerce_cart] dans la page cart
+* ajouter le shortcode [woocommerce_checkout] dans la page checkout (optionnel)
+* ajouter le shortcode [woocommerce_my_account] dans la page Mon-compte  
+
+* activer les inscriptions : WordPress - WooCommerce - Réglages - Comptes & confidentialité

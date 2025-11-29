@@ -16,6 +16,10 @@ function buymore_enqueue_assets()
     wp_enqueue_style('swipper-css-style', get_stylesheet_directory_uri() . '/assets/libs/swipper/css/swiper-bundle.min.css');
     wp_enqueue_script('swipper-js-main', get_stylesheet_directory_uri() . '/assets/libs/swipper/js/swiper-bundle.min.js', [], '1.0', true);
 
+    // fontawesome
+    wp_enqueue_style('fontawesome-css-style', get_stylesheet_directory_uri() . '/assets/libs/fontawesome-free-6.7.2-web/css/all.css');
+
+
     // --- Page d'accueil ---
     if (is_front_page()) {
         wp_enqueue_style('home-style', get_stylesheet_directory_uri() . '/assets/css/home.css');
@@ -83,12 +87,23 @@ function buymore_enqueue_assets()
     }
 
 
-    // CSS/JS page mon-compte
-    if (is_page('mon-compte')) {
+    // CSS/JS global admin
+    if (is_account_page()) {
+        wp_enqueue_style('index-admin-style', get_stylesheet_directory_uri() . '/assets/css/index-admin.css');
+    }
+
+    // CSS/JS Dashboard
+    if (is_account_page() && !is_wc_endpoint_url()) {
         wp_enqueue_style('mon-compte-style', get_stylesheet_directory_uri() . '/assets/css/mon-compte.css');
     }
+
+    // Login / register page
+    if (is_account_page() && !is_user_logged_in() && !is_wc_endpoint_url()) {
+        wp_enqueue_style('auth-style', get_stylesheet_directory_uri() . '/assets/css/connexion.css');
+    }
+
     // CSS/JS page commandes
-    if (is_page('commandes')) {
+    if (is_account_page() && is_wc_endpoint_url('orders')) {
         wp_enqueue_style('commandes-style', get_stylesheet_directory_uri() . '/assets/css/commandes.css');
     }
 
@@ -108,6 +123,3 @@ function custom_remove_hooks()
     }
 }
 add_action('template_redirect', 'custom_remove_hooks');
-
-
- 
