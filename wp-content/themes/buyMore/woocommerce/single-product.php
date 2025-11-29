@@ -24,6 +24,10 @@ get_header('shop');
 ?>
 <div class="product-page">
 
+    <?php
+    wc_print_notices();
+    ?>
+
     <?php while (have_posts()) : the_post(); ?>
 
         <?php
@@ -122,11 +126,17 @@ get_header('shop');
                     <span class="reviews">(<?php echo $rating_count; ?> avis)</span>
                 </div>
 
-                <p class="price"><?php echo $product->get_price_html(); ?></p>
+                <div class="price-stock-wrapper">
+                    <p class="price"><?php echo $product->get_price_html(); ?></p>
 
-                <p class="availability">
-                    <?php echo $product->is_in_stock() ? 'Disponible en stock' : 'Rupture de stock'; ?>
-                </p>
+                    <?php if ($product->is_type('variable')) : ?>
+                        <p class="availability stock" style="display:none;"></p>
+                    <?php else : ?>
+                        <p class="availability stock">
+                            <?php echo $product->is_in_stock() ? '<span class="in-stock">Disponible en stock</span>' : '<span class="out-of-stock">Rupture de stock</span>'; ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
 
                 <!-- OPTIONS / VARIATIONS -->
                 <div class="product-options">

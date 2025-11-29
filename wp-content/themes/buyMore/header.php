@@ -52,8 +52,15 @@
                 </div>
 
                 <div class="search-bar">
-                    <form>
-                        <input type="text" placeholder="Rechercher un produit...">
+                    <form role="search" method="get" action="<?php echo home_url('/'); ?>">
+                        <input
+                            type="text"
+                            name="s"
+                            placeholder="Rechercher un produit..."
+                            value="<?php echo get_search_query(); ?>">
+
+                        <!-- <input type="hidden" name="post_type" value="product"> -->
+
                         <button type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white"
                                 viewBox="0 0 24 24">

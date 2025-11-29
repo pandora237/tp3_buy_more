@@ -107,6 +107,11 @@ function buymore_enqueue_assets()
         wp_enqueue_style('commandes-style', get_stylesheet_directory_uri() . '/assets/css/commandes.css');
     }
 
+    // resultats recherche
+    if (is_search()) {
+        wp_enqueue_style('resultats-recherche-style', get_stylesheet_directory_uri() . '/assets/css/resultats-recherche.css');
+    }
+
     // CSS/JS page livraison_et_retour
     if (is_page('livraison_et_retour')) {
         wp_enqueue_style('livraison_et_retour-style', get_stylesheet_directory_uri() . '/assets/css/livraison_et_retour.css');

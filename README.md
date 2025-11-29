@@ -1,4 +1,4 @@
-# tp3_buy_more
+# tp4_buy_more : Theme Wordpress/Woocommerce
 
 site de e-commerce realiser par le group d'etudiant de 4Gi-ENSPY :    
     1- ALONGAMO KENFACK Franky 24P750 -------------- pandora237
@@ -23,3 +23,13 @@ instructions d'installation :
 * ajouter le shortcode [woocommerce_my_account] dans la page Mon-compte  
 
 * activer les inscriptions : WordPress - WooCommerce - Réglages - Comptes & confidentialité
+* activer les un moyen de payment : WordPress - WooCommerce - Réglages - Payments
+
+
+* liste des pages a ajouter : 
+    - apropos ( slug : /apropos )
+    - equipe ( slug : /equipe )
+    - faq ( slug : /faq )
+    - politique_de_confidentialite ( slug : /politique_de_confidentialite )
+    - livraison_et_retour ( slug : /livraison_et_retour )
+    - contact ( slug : /contact )
