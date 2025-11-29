@@ -54,7 +54,7 @@ $count = $query->found_posts;
             <div class="not-result">
                 <i class="fa-solid fa-circle-exclamation fa-3x"></i>
                 <p>Aucun résultat pour <span>" <?php echo esc_html($keyword); ?> "</span></p>
-                <a class="btn btn-primary" href="/">Go home</a>
+                <a class="btn btn-primary" href="<?php echo home_url(); ?>">Go home</a>
             </div>
         <?php endif; ?>
     </section>
