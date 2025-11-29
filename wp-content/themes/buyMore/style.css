@@ -7,8 +7,7 @@ Version: 1.0
 */
 
 
-@import url("assets/libs/fontawesome-free-6.7.2-web/css/all.css");
-
+@import url("../libs/fontawesome-free-6.7.2-web/css/all.css");
 
 :root {
     --font-family: 'Poppins', sans-serif;
@@ -113,6 +112,24 @@ section {
 
 .title {
     margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.rate-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: gold;
+}
+
+.not-result {
+    width: max-content;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 100px 0px;
+    text-align: center;
+    color: var(--col-danger);
 }
 
 .btn {
@@ -154,7 +171,7 @@ section {
 }
 
 .btn-success:hover {
-    background-color: var(--col-success-hover);
+    opacity: 0.8;
 }
 
 .btn-warning {
@@ -217,19 +234,6 @@ header {
     backdrop-filter: blur(200px);
 }
 
-/*  correctif wordpress */
-body.admin-bar .header-menu {
-    top: 32px;
-}
-
-@media screen and (max-width: 782px) {
-    body.admin-bar .header-menu {
-        top: 46px;
-    }
-}
-
-/*  */
-
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -289,7 +293,7 @@ body.admin-bar .header-menu {
 }
 
 .logo img {
-    height: 50px !important;
+    height: 50px;
 }
 
 .logo a {
@@ -512,6 +516,19 @@ body.admin-bar .header-menu {
     .content-menu .menu-items li img {
         max-height: 50%;
     }
+}
+
+
+@media (max-width: 450px) {
+    .container {
+        padding-top: 80px !important;
+    }
+
+    .menu-items {
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
 }
 
 /* end header */
@@ -1075,6 +1092,7 @@ input.valid {}
     padding: 15px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 400px;
 }
 
 .product-card:hover {
@@ -1100,4 +1118,47 @@ input.valid {}
 .product-card .descript {
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+
+/* loader page */
+
+#page-loade-overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
+    background-color: var(--col-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+
+
+
+
+/* add css wordpress*/
+
+/*  correctif wordpress */
+body.admin-bar .header-menu {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar .header-menu {
+        top: 46px;
+    }
+}
+
+.input-primary {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.2rem;
+    font-size: 14px;
 }

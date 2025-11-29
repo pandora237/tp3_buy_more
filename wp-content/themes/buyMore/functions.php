@@ -22,7 +22,7 @@ function buymore_enqueue_assets()
         wp_enqueue_script('home-main', get_stylesheet_directory_uri() . '/assets/js/home.js', [], '1.0', true);
     }
     //CSS/JS page panier
-    if (is_page('panier')) {
+    if (is_page('cart')) {
         wp_enqueue_style('panier-style', get_stylesheet_directory_uri() . '/assets/css/panier.css');
         wp_enqueue_script('panier', get_stylesheet_directory_uri() . '/assets/js/panier.js', [], '1.0', true);
     }
@@ -108,3 +108,12 @@ function custom_remove_hooks()
     }
 }
 add_action('template_redirect', 'custom_remove_hooks');
+
+
+// // 
+// add_filter('wc_get_template', function ($template, $template_name, $args, $path, $default_path) {
+//     if ($template_name === 'cart/cart.php') {
+//         echo "<div style='background:red;color:white;padding:15px;'>TEMPLATE UTILISÉ : $template</div>";
+//     }
+//     return $template;
+// }, 10, 5);
