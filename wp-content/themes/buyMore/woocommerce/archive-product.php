@@ -1,98 +1,102 @@
 <?php
-
-/**
- * The Template for displaying product archives, including the main shop page which is a post type archive
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/archive-product.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see https://woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
- * @version 8.6.0
- */
-
 defined('ABSPATH') || exit;
 
-get_header('shop');
+get_header();
 
-/**
- * Hook: woocommerce_before_main_content.
- *
- * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
- * @hooked woocommerce_breadcrumb - 20
- * @hooked WC_Structured_Data::generate_website_data() - 30
- */
-do_action('woocommerce_before_main_content');
-
-/**
- * Hook: woocommerce_shop_loop_header.
- *
- * @since 8.6.0
- *
- * @hooked woocommerce_product_taxonomy_archive_header - 10
- */
 do_action('woocommerce_shop_loop_header');
+
+echo '<section class="main section-content">';
+
+echo '<div class="filtre">';
+echo '    <div class="content-filtre">';
+echo '        <h2>Filtre</h2>';
+
+
+
+echo '        <div class="items-filter">';
+
+//  éléments classiques de woocommerce_before_shop_loop 
+woocommerce_output_all_notices();
+woocommerce_result_count();
+woocommerce_catalog_ordering();
+
+// Ton filtre personnalisé 
+?>
+<!-- <div class="filter-group">
+	<label for="categorie">Catégorie :</label>
+	<select id="categorie" name="product_cat" class="woocommerce-category-filter">
+		<option value="">Toutes les catégories</option>
+		<?php
+		$terms = get_terms(array(
+			'taxonomy' => 'product_cat',
+			'hide_empty' => true,
+		));
+		if (!empty($terms) && !is_wp_error($terms)) {
+			foreach ($terms as $term) {
+				$selected = isset($_GET['product_cat']) && $_GET['product_cat'] === $term->slug ? 'selected' : '';
+				echo '<option value="' . esc_attr($term->slug) . '" ' . $selected . '>' . esc_html($term->name) . '</option>';
+			}
+		}
+		?>
+	</select>
+</div> -->
+
+<div class="filter-group">
+	<div class="slider-container">
+		<span>Prix</span>
+		<input type="range" min="0" max="1000" value="0" id="minRange">
+	</div>
+</div>
+
+<div class="content-filter">
+	<div class="filter-group">
+		<label>
+			<input type="checkbox" name="stock" value="1" <?php checked(isset($_GET['stock']), true); ?>>
+			En stock uniquement
+		</label>
+	</div>
+	<div class="filter-group">
+		<label>
+			<input type="checkbox" name="onsale" value="1" <?php checked(isset($_GET['onsale']), true); ?>>
+			En promotion
+		</label>
+	</div>
+	<div class="filter-group">
+		<label>
+			<input type="checkbox" name="new" value="1">
+			Nouveau
+		</label>
+	</div>
+</div>
+<?php
+
+echo '        </div>';
+echo '    </div>';
+echo '</div>';
 
 if (woocommerce_product_loop()) {
 
-	/**
-	 * Hook: woocommerce_before_shop_loop.
-	 *
-	 * @hooked woocommerce_output_all_notices - 10
-	 * @hooked woocommerce_result_count - 20
-	 * @hooked woocommerce_catalog_ordering - 30
-	 */
-	do_action('woocommerce_before_shop_loop');
-
-	woocommerce_product_loop_start();
+	echo '<div class="content-product">';
 
 	if (wc_get_loop_prop('total')) {
 		while (have_posts()) {
 			the_post();
-
-			/**
-			 * Hook: woocommerce_shop_loop.
-			 */
 			do_action('woocommerce_shop_loop');
-
 			wc_get_template_part('content', 'product');
 		}
 	}
 
 	woocommerce_product_loop_end();
 
-	/**
-	 * Hook: woocommerce_after_shop_loop.
-	 *
-	 * @hooked woocommerce_pagination - 10
-	 */
+	// Pagination
 	do_action('woocommerce_after_shop_loop');
+
+	echo '</div>';
 } else {
-	/**
-	 * Hook: woocommerce_no_products_found.
-	 *
-	 * @hooked wc_no_products_found - 10
-	 */
 	do_action('woocommerce_no_products_found');
 }
 
-/**
- * Hook: woocommerce_after_main_content.
- *
- * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
- */
-do_action('woocommerce_after_main_content');
+echo '</section>';
 
-/**
- * Hook: woocommerce_sidebar.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-do_action('woocommerce_sidebar');
-
-get_footer('shop');
+get_footer();
+?>

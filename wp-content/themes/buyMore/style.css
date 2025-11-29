@@ -1162,3 +1162,9 @@ body.admin-bar .header-menu {
     border-radius: 0.2rem;
     font-size: 14px;
 }
+
+.rating-and-like{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

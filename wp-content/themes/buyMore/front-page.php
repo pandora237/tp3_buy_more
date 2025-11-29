@@ -49,7 +49,7 @@ $pub_query = new WP_Query($pub_args);
 
 ?>
 
-<section class="banner-section">
+<section class="banner-section woocommerce">
     <div class="swiper">
         <div class="swiper-wrapper" id="swiper-wrapper-banner">
             <?php
@@ -61,10 +61,10 @@ $pub_query = new WP_Query($pub_args);
             ?>
                     <div class="swiper-slide">
                         <div class="banner">
-                            <div class="banner-content">
+                            <div class="banner-content  ">
                                 <h1><?php the_title(); ?></h1>
                                 <p><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
-                                <div class="rate-content">
+                                <div class="rate-content rating-and-like">
                                     <?php echo wc_get_rating_html($product->get_average_rating()); ?>
                                 </div>
                                 <a href="<?php the_permalink(); ?>" class="btn btn-primary">Découvrir</a>
@@ -110,7 +110,7 @@ $pub_query = new WP_Query($pub_args);
 
 
 
-<section class="best-seller">
+<section class="best-seller woocommerce">
     <h2 class="title">Nos Meilleures Ventes</h2>
     <div class="product-grid">
         <?php
@@ -130,7 +130,7 @@ $pub_query = new WP_Query($pub_args);
                     </a>
                     <h3><?php the_title(); ?></h3>
                     <p class="descript"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
-                    <div class="rate-content"><?php echo wc_get_rating_html($product->get_average_rating()); ?></div>
+                    <div class="rate-content rating-and-like"><?php echo wc_get_rating_html($product->get_average_rating()); ?></div>
                     <p class="price"><?php echo $product->get_price_html(); ?></p>
                     <a href="<?php the_permalink(); ?>" class="btn btn-secondary">Découvrir</a>
                 </article>
@@ -146,7 +146,7 @@ $pub_query = new WP_Query($pub_args);
     <a href="<?php echo get_permalink(wc_get_page_id('shop')); ?>" class="btn see-more">voir plus + </a>
 </section>
 
-<section class="pub-product">
+<section class="pub-product woocommerce">
     <?php
     if ($pub_query->have_posts()) :
         while ($pub_query->have_posts()) : $pub_query->the_post();
@@ -169,7 +169,7 @@ $pub_query = new WP_Query($pub_args);
 </section>
 
 
-<section class="best-product">
+<section class="best-product woocommerce">
     <h2 class="title">Produits Phares</h2>
 
     <div class="product-content product-grid">
@@ -219,7 +219,7 @@ $pub_query = new WP_Query($pub_args);
                                 <p class="type">Nouveau</p>
                             <?php endif; ?>
 
-                            <div>
+                            <div class=" rating-and-like">
                                 <div class="rating">
                                     <?php echo wc_get_rating_html($product->get_average_rating()); ?>
                                 </div>

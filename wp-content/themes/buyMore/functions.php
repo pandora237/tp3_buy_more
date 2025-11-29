@@ -57,7 +57,7 @@ function buymore_enqueue_assets()
         wp_enqueue_style('index-style', get_stylesheet_directory_uri() . '/assets/css/index.css');
     }
     // CSS/JS page listeproduits
-    if (is_page('listeproduits')) {
+    if (is_product_category()) {
         wp_enqueue_style('listeproduits-style', get_stylesheet_directory_uri() . '/assets/css/listeProduits.css');
     }
 
@@ -110,10 +110,4 @@ function custom_remove_hooks()
 add_action('template_redirect', 'custom_remove_hooks');
 
 
-// // 
-// add_filter('wc_get_template', function ($template, $template_name, $args, $path, $default_path) {
-//     if ($template_name === 'cart/cart.php') {
-//         echo "<div style='background:red;color:white;padding:15px;'>TEMPLATE UTILISÉ : $template</div>";
-//     }
-//     return $template;
-// }, 10, 5);
+ 
